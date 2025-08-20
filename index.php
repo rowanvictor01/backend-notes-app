@@ -18,7 +18,7 @@ $notes = $query_results->fetchAll();
 
     <section>
         <h2>Add New Note</h2>
-        <form action="action.php" method="post">
+        <form action="add.php" method="post">
             <input type="text" name="title" placeholder="title" required>
             <br>
             <textarea name="content" placeholder="Start Typing..." rows="3"></textarea>
