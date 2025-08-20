@@ -1,6 +1,6 @@
 # Backend Notes App 📝
 
-![PHP](https://img.shields.io/badge/PHP-7.4%2B-success)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-success)
 ![SQLite](https://img.shields.io/badge/SQLite-3-blue)
 
 A simple notes application built entirely with **PHP** and **SQLite**, using only server-side rendering. This project is designed to learn the fundamentals of backend development — handling form submissions, working with databases, and generating dynamic HTML pages — all without frameworks.
