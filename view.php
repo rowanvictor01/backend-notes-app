@@ -31,13 +31,20 @@ if (!$note) {
 <body>
     <article>
         <h1><?= htmlspecialchars($note["title"]) ?></h1>
-        <span>
-            <a href="delete.php?id=<?= $id ?>" onclick="return confirm('Are you sure you want to delete this note?')">Delete Note</a>
-        </span>
+
         <div>Created on: <?= htmlspecialchars($note["created_at"]) ?></div>
         <br>
+
         <div><?= nl2br(htmlspecialchars($note["content"])) ?></div>
         <br>
+
+        <div>
+            <a href="edit.php?id=<?= $id ?>">Edit Note</a>
+        </div>
+        <div>
+            <a href="delete.php?id=<?= $id ?>" onclick="return confirm('Are you sure you want to delete this note?')">Delete Note</a>
+        </div>
+
         <div>
             <a href="index.php">&leftarrow;Back To All Notes</a>
         </div>
