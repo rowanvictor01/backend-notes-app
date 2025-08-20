@@ -34,7 +34,9 @@ $notes = $query_results->fetchAll();
         <?php else: ?>
             <?php foreach ($notes as $note): ?>
                 <div>
-                    <h3><?= htmlspecialchars($note["title"]) ?></h3>
+                    <a href="view.php?id=<?= $note["id"] ?>">
+                        <h3><?= htmlspecialchars($note["title"]) ?></h3>
+                    </a>
                     <p><?= htmlspecialchars($note["created_at"]) ?></p>
                 </div>
             <?php endforeach; ?>
