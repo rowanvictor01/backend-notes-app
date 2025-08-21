@@ -1,6 +1,19 @@
 <?php
 require "config.php";
-$query_results = $db->query("SELECT id, title, created_at FROM notes ORDER BY created_at DESC");
+
+if (isset($_GET["reset"])) {
+    $search = "";
+} else {
+    $search = $_GET["search"] ?? "";
+}
+
+if ($search) {
+    $query_results = $db->prepare("SELECT id, title, created_at FROM notes WHERE title LIKE ? ORDER BY created_at DESC");
+    $query_results->execute(["%{$search}%"]);
+} else {
+    $query_results = $db->query("SELECT id, title, created_at FROM notes ORDER BY created_at DESC");
+}
+
 $notes = $query_results->fetchAll();
 ?>
 
@@ -29,16 +42,27 @@ $notes = $query_results->fetchAll();
 
     <section>
         <h2>My Notes</h2>
+        <section>
+            <form method="get">
+                <input name="search" value="<?= htmlspecialchars($search) ?>" type="text" placeholder="Search Notes...">
+                <button>Enter</button>
+            </form>
+
+            <form method="get">
+                <button name="reset" value="reset">Reset List</button>
+            </form>
+        </section>
         <?php if (!count($notes)): ?>
             <p>No notes yet. Add one above.</p>
         <?php else: ?>
             <?php foreach ($notes as $note): ?>
-                <div>
+
+                <section>
                     <a href="view.php?id=<?= $note["id"] ?>">
                         <h3><?= htmlspecialchars($note["title"]) ?></h3>
                     </a>
                     <p><?= htmlspecialchars($note["created_at"]) ?></p>
-                </div>
+                </section>
             <?php endforeach; ?>
         <?php endif; ?>
     </section>
