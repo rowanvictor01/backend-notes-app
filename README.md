@@ -39,6 +39,7 @@ My goal is to understand how websites work under the hood — how data is stored
 - ✅ Add a new note via a form
 - ✅ Edit a note with a pre-filled form
 - ✅ Delete a note with confirmation
+- ✅ Search for an existing note in the db
 - ✅ Data saved in SQLite (persists between visits)
 - ✅ Clean, readable PHP code
 
@@ -48,9 +49,9 @@ My goal is to understand how websites work under the hood — how data is stored
 
 This is my first backend project, and I built it to understand:
 
-    How PHP connects to a database
-    How HTML forms send data to the server
-    How to safely insert and retrieve data using SQL
-    How websites can store and show dynamic content
+- How PHP connects to a database
+- How HTML forms send data to the server
+- How to safely insert and retrieve data using SQL
+- How websites can store and show dynamic content
 
 This project will lay the foundations that will help me grow into more advanced topics later, like APIs, security, and full-stack apps.
